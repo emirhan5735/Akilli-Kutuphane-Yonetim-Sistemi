@@ -1,0 +1,130 @@
+:root{
+    --navy:#0b172a;
+    --navy2:#101f3b;
+    --primary:#1b4b82;
+}
+*{ font-family: 'Poppins', sans-serif; }
+body{ background:#f5f6fa; }
+
+
+#wrapper{
+    min-height:100vh;
+}
+#sidebar-wrapper{
+    width: 260px;
+    min-height:100vh;
+    position: sticky;
+    top:0;
+}
+#wrapper.toggled #sidebar-wrapper{
+    margin-left:-260px;
+}
+#page-content-wrapper{
+    width:100%;
+}
+.sidebar-heading{
+    color:#fff;
+    font-weight:700;
+    padding:18px 20px;
+    font-size:18px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.second-text{
+    color: rgba(255,255,255,0.85);
+}
+.list-group-item{
+    border:0;
+    padding:14px 18px;
+}
+.list-group-item.active{
+    background: rgba(255,255,255,0.12) !important;
+    border-left: 4px solid #4da3ff;
+}
+.bg-navy{ background: var(--navy); }
+.text-navy{ color: var(--navy); }
+.primary-text{ color: var(--navy); }
+
+.btn-navy{
+    background: var(--navy);
+    color:#fff;
+    border:0;
+}
+.btn-navy:hover{
+    background: var(--navy2);
+    color:#fff;
+}
+
+
+.content-section{ display:none; }
+.content-section.active{ display:block; }
+
+
+.auth-page{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#0b172a;
+}
+.login-bg-overlay{
+    position: fixed;
+    inset:0;
+    background-image:
+            linear-gradient(rgba(7,13,24,0.75), rgba(7,13,24,0.9)),
+            url('/images/library-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index:-1;
+}
+.login-card{
+    background:#fff;
+    border-radius:18px;
+    padding: 28px 26px;
+}
+
+
+.home-hero{
+    position: relative;
+    min-height: calc(100vh - 70px);
+    background-image:
+            linear-gradient(rgba(5,10,20,0.78), rgba(5,10,20,0.78)),
+            url('/images/library-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 30px 15px;
+}
+.hero-card{
+    max-width: 780px;
+    width: 100%;
+    background: rgba(0,0,0,0.35);
+    border-radius: 18px;
+    padding: 34px 28px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.12);
+}
+.hero-card h1, .hero-card p, .hero-card small{ color:#fff; }
+.hero-search-group .input-group-text{
+    background:#fff;
+    border-right:0;
+}
+.hero-search-group input{
+    border-left:0;
+}
+.hero-search-group button{
+    min-width: 110px;
+}
+
+
+.card{ border-radius:16px; }
+.rounded{ border-radius:16px !important; }
+
+
+#rentedBookList tr {
+    display: table-row !important;
+    visibility: visible !important;
+    background-color: #fff !important;
+    color: #000 !important;
+}
