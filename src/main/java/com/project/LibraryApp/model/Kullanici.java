@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -45,4 +46,12 @@ public class Kullanici {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Rol rol;
+
+
+    @Column(name = "reset_token")
+    private String resetToken;
+
+
+    @Column(name = "reset_token_creation_date")
+    private LocalDateTime resetTokenCreationDate;
 }

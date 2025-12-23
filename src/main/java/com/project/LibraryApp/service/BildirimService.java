@@ -3,11 +3,14 @@ package com.project.LibraryApp.service;
 import com.project.LibraryApp.model.Kitap;
 import com.project.LibraryApp.model.Kullanici;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.function.ServerResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+
+
+
 
 import java.time.LocalDate;
 
@@ -55,7 +58,6 @@ public class BildirimService {
     }
 
 
-
     public void sendHosgeldinMesaji(String kime, String kullaniciAdi) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("kutuphanebilgilendirme@gmail.com");
@@ -66,6 +68,17 @@ public class BildirimService {
                 "Giriş yaparak kütüphanemizdeki eşsiz kitapları keşfetmeye başlayabilirsiniz.\n\n" +
                 "İyi Okumalar dileriz.");
 
-         mailSender.send(message);
+        mailSender.send(message);
+    }
+
+
+    public void sendPasswordResetCode(String toEmail, String code) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom("seninmailin@gmail.com");
+        message.setTo(toEmail);
+        message.setSubject("Şifre Yenileme Kodu");
+        message.setText("Merhaba,\n\nŞifrenizi yenilemek için kullanmanız gereken doğrulama kodu: " + code + "\n\nBu kod 15 dakika geçerlidir.");
+
+        mailSender.send(message);
     }
 }
