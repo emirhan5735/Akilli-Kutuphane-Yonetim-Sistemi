@@ -99,7 +99,6 @@ public class OduncService {
 
         if (gercek.isAfter(beklenen)) {
 
-            // Gün farkını hesapla
             long gecikmeGun = ChronoUnit.DAYS.between(beklenen, gercek);
 
             if (gecikmeGun == 0) {

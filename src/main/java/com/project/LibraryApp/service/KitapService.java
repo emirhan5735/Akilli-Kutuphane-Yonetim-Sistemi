@@ -27,7 +27,6 @@ public class KitapService {
         if (kitap.getKategori() == null || !kategoriService.findKategoriById(kitap.getKategori().getId()).isPresent()) {
             throw new RuntimeException("Geçersiz Kategori ID'si.");
         }
-
         if (kitap.getIsbn() == null || kitap.getIsbn().isEmpty()) {
             String randomIsbn = "978-" + System.currentTimeMillis();
             kitap.setIsbn(randomIsbn);
